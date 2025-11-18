@@ -6,154 +6,146 @@
 <title>Iman Naser - CV</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; padding:20px 0; }
-    .container { max-width:1000px; margin:auto; padding:0 20px; }
+  /* Basic */
+  body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; color:#333; line-height:1.6; }
+  .container { max-width: 900px; margin: 40px auto; padding:0 20px; }
 
-    /* HEADER */
-    .top-box {
-        background: linear-gradient(135deg,#6a11cb,#2575fc);
-        color:white; padding:40px 20px; border-radius:20px; text-align:center;
-        box-shadow:0 8px 25px rgba(0,0,0,0.15);
-        transition:0.5s;
-    }
-    .top-box:hover { transform: scale(1.02); }
-    .top-box h1 { font-size:42px; margin-bottom:10px; }
-    .top-box p { margin:6px 0; font-size:16px; }
-    .buttons { margin-top:15px; }
-    .buttons a {
-        text-decoration:none; margin:5px;
-        display:inline-block; padding:12px 25px;
-        background:#ff6b6b; color:white; border-radius:50px;
-        font-weight:bold; transition:0.3s;
-    }
-    .buttons a:hover { background:#1dd1a1; transform:scale(1.05); }
+  /* Animated Header Gradient */
+  @keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+  .header {
+    text-align:center;
+    padding:50px 20px;
+    background: linear-gradient(-45deg,#6a11cb,#2575fc,#1dd1a1,#ff6b6b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+  }
+  .header h1 { font-size:42px; margin-bottom:10px; }
+  .header p { margin:5px 0; font-size:16px; }
 
-    /* SECTIONS */
-    .section {
-        background:white; padding:30px; margin:20px 0; border-radius:15px;
-        box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;
-    }
-    .section:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.12); }
-    .section h2 { font-size:24px; color:#2575fc; border-bottom:3px solid #c9d6ff; padding-bottom:10px; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
-    ul li { margin-bottom:8px; line-height:1.6; padding-left:20px; position:relative; }
-    ul li::before { content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#6a11cb; position:absolute; left:0; }
+  /* Buttons */
+  .buttons { margin-top:15px; }
+  .buttons a {
+    text-decoration:none; margin:5px;
+    display:inline-block; padding:10px 22px;
+    background:white; color:#2575fc; border-radius:50px;
+    font-weight:bold; transition:0.3s; font-size:14px;
+  }
+  .buttons a:hover { background:#1dd1a1; color:white; transform:scale(1.05); }
 
-    a { color:#2575fc; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+  /* Sections */
+  .section {
+    background:white; padding:30px 25px; margin-bottom:20px; border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05); opacity:0; transform:translateY(20px);
+    transition: all 0.8s ease;
+  }
+  .section.visible { opacity:1; transform:translateY(0); }
+  .section h2 { font-size:22px; color:#2575fc; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
+  ul li { margin-bottom:8px; padding-left:20px; position:relative; }
+  ul li::before { content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#2575fc; position:absolute; left:0; }
+  a { color:#2575fc; text-decoration:none; }
+  a:hover { text-decoration:underline; }
 
-    /* ICONS for sections */
-    .section h2 i { color:#2575fc; }
+  /* Skill Icons Hover */
+  .skill-icon { display:inline-block; margin:8px; font-size:24px; transition: transform 0.3s, color 0.3s; color:#2b4c7e; }
+  .skill-icon:hover { transform: scale(1.4) rotate(15deg); color:#1dd1a1; }
 
-    /* RESPONSIVE */
-    @media(max-width:700px){
-        .top-box h1 { font-size:32px; }
-        .section h2 { font-size:20px; }
-    }
+  @media(max-width:700px){
+    .header h1 { font-size:32px; }
+    .section h2 { font-size:18px; }
+  }
 </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Header -->
-    <div class="top-box">
-        <h1>Iman Naser</h1>
-        <p><strong>Date of Birth:</strong> 03/08/1994</p>
-        <p><strong>Email:</strong> iman.ab.nasser@gmail.com</p>
-        <p><strong>Location:</strong> Istanbul, Turkey</p>
-        <div class="buttons">
-            <a href="mailto:iman.ab.nasser@gmail.com">📧 إرسال إيميل</a>
-            <a href="https://www.linkedin.com/in/iman-naser" target="_blank">💼 لينكدإن</a>
-            <a href="CV.pdf" download>📄 تحميل CV PDF</a>
-        </div>
+  <!-- Header -->
+  <div class="header">
+    <h1>Iman Naser</h1>
+    <p><strong>Date of Birth:</strong> 03/08/1994</p>
+    <p><strong>Email:</strong> iman.ab.nasser@gmail.com</p>
+    <p><strong>Location:</strong> Istanbul, Turkey</p>
+    <div class="buttons">
+      <a href="mailto:iman.ab.nasser@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/iman-naser" target="_blank">💼 LinkedIn</a>
+      <a href="CV.pdf" download>📄 Download PDF</a>
     </div>
+  </div>
 
-    <!-- Academic Information -->
-    <div class="section">
-        <h2><i class="fas fa-graduation-cap"></i> Academic Information</h2>
-        <p><strong>University:</strong> Dokuz Eylul University</p>
-        <p><strong>Program:</strong> M.Sc. in Computer Engineering (With Thesis)</p>
-        <p><strong>Language:</strong> English</p>
-        <p><strong>GPA:</strong> 4.00 / 4.00</p>
-        <p><strong>Admission Date:</strong> 02/10/2020</p>
-        <p><strong>Status:</strong> Active Student</p>
+  <!-- Sections -->
+  <div class="section">
+    <h2><i class="fas fa-graduation-cap"></i> Academic Information</h2>
+    <p><strong>University:</strong> Dokuz Eylul University</p>
+    <p><strong>Program:</strong> M.Sc. in Computer Engineering (With Thesis)</p>
+    <p><strong>Language:</strong> English</p>
+    <p><strong>GPA:</strong> 4.00 / 4.00</p>
+    <p><strong>Admission Date:</strong> 02/10/2020</p>
+    <p><strong>Status:</strong> Active Student</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-award"></i> Highlighted Courses</h2>
+    <ul>
+      <li>Artificial Intelligence — Grade: AA</li>
+      <li>Mobile Cloud Computing — Grade: AA</li>
+      <li>Numerical and Approximate Methods — Grade: AA</li>
+      <li>Database Design Principles — Grade: AA</li>
+      <li>Knowledge-Based Systems — Grade: AA</li>
+      <li>Foundations of Social Network Analysis — Grade: AA</li>
+      <li>Scientific Research Techniques & Publication Ethics — Grade: AA</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-flask"></i> Master Thesis & Research</h2>
+    <p>Completed multiple semesters of M.Sc. Research and Thesis work with consistent performance (grades B / G).</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+    <ul>
+      <li>Information & Communication Teacher — Salah-Aldeen School, Aleppo (2018–2019)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-book"></i> Additional Education</h2>
+    <ul>
+      <li>Master in Web Science — Syrian Virtual University (Studied 1 Semester) – 2019</li>
+      <li>B.Sc. in Electronic Engineering — University of Aleppo (2012–2018)</li>
+      <li>Thesis: Design & Implement an Adult Cardiopulmonary Resuscitation Device</li>
+      <li>Graduation Average: 80.76% — Rank: 7th in Department</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-tools"></i> Skills</h2>
+    <div>
+      <i class="fab fa-html5 skill-icon"></i>
+      <i class="fab fa-css3-alt skill-icon"></i>
+      <i class="fab fa-js skill-icon"></i>
+      <i class="fas fa-database skill-icon"></i>
+      <i class="fab fa-android skill-icon"></i>
+      <i class="fas fa-cogs skill-icon"></i>
     </div>
-
-    <div class="section">
-        <h2><i class="fas fa-award"></i> Courses & Achievements</h2>
-        <ul>
-            <li>Artificial Intelligence — Grade: AA</li>
-            <li>Mobile Cloud Computing — Grade: AA</li>
-            <li>Numerical and Approximate Methods — Grade: AA</li>
-            <li>Database Design Principles — Grade: AA</li>
-            <li>Knowledge-Based Systems — Grade: AA</li>
-            <li>Foundations of Social Network Analysis — Grade: AA</li>
-            <li>Scientific Research Techniques & Publication Ethics — Grade: AA</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-flask"></i> Master Thesis & Research</h2>
-        <p>Completed multiple semesters of M.Sc. Research and Thesis work with consistent performance (grades B / G), indicating sustained academic progress.</p>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-        <ul>
-            <li>Information & Communication Teacher — Salah-Aldeen School, Aleppo (2018–2019)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-book"></i> Additional Education</h2>
-        <ul>
-            <li>Master in Web Science — Syrian Virtual University (Studied 1 Semester) – 2019</li>
-            <li>B.Sc. in Electronic Engineering (Computer Engineering) — University of Aleppo (2012–2018)</li>
-            <li>Thesis: Design & Implement an Adult Cardiopulmonary Resuscitation Device</li>
-            <li>Graduation Average: 80.76% — Rank: 7th in Department</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-tools"></i> Skills</h2>
-        <ul>
-            <li>C#.Net</li>
-            <li>Data Mining, Web Programming, Distributed Programming</li>
-            <li>Software Engineering, Data Repository & Exchanging</li>
-            <li>Android apps with MIT App Inventor</li>
-            <li>PLC – Programmable Logic Controller</li>
-            <li>ASP.Net</li>
-            <li>Database design & management (Microsoft SQL Server)</li>
-            <li>Pneumatic System Design</li>
-            <li>PCB Design & Electronic Circuit Design</li>
-            <li>Building simple web pages (HTML/CSS)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-language"></i> Languages</h2>
-        <ul>
-            <li>Arabic — Native</li>
-            <li>English — Intermediate (TOEFL prep + 2017 Exam Score: 82%)</li>
-            <li>Turkish — A1, A2, B1 at DEDAM, Dokuz Eylul University</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><i class="fas fa-certificate"></i> Training & Certificates</h2>
-        <ul>
-            <li>Internet of Things courses (openSAP, Edrak, Coursera) — 2019</li>
-            <li>Syrian Engineers Syndicate Member — 2019</li>
-            <li>Computer Maintenance — SARC Aleppo — 2019</li>
-            <li>Web Design (HTML/CSS) — Francophonie Agency — 2018</li>
-            <li>PLC Training — Engineers Syndicate — 2018</li>
-            <li>Photoshop Course — NAMAA — 2016–2017</li>
-            <li>18th Al-Bassel Fair for Invention and Innovation — 2017</li>
-            <li>ACM Aleppo Collegiate Programming Contest — 2016 & 2017</li>
-        </ul>
-    </div>
-
-</div>
-</body>
-</html>
+    <ul>
+      <li>C#.Net</li>
+      <li>Data Mining, Web Programming, Distributed Programming</li>
+      <li>Software Engineering, Data Repository & Exchanging</li>
+      <li>Android apps with MIT App Inventor</li>
+      <li>PLC – Programmable Logic Controller</li>
+      <li>ASP.Net</li>
+      <li>Database design & management (Microsoft SQL Server)</li>
+      <li>Pneumatic System Design</li>
+      <li>PCB Design & Electronic Circuit Design</li>
+      <li>Building simple web pages (HTML/CSS)</li>
+    </ul>
+  </di
