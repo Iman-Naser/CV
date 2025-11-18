@@ -148,4 +148,46 @@
       <li>PCB Design & Electronic Circuit Design</li>
       <li>Building simple web pages (HTML/CSS)</li>
     </ul>
-  </di
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-language"></i> Languages</h2>
+    <ul>
+      <li>Arabic — Native</li>
+      <li>English — Intermediate (TOEFL prep + 2017 Exam Score: 82%)</li>
+      <li>Turkish — A1, A2, B1 at DEDAM, Dokuz Eylul University</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-certificate"></i> Training & Certificates</h2>
+    <ul>
+      <li>Internet of Things courses (openSAP, Edrak, Coursera) — 2019</li>
+      <li>Syrian Engineers Syndicate Member — 2019</li>
+      <li>Computer Maintenance — SARC Aleppo — 2019</li>
+      <li>Web Design (HTML/CSS) — Francophonie Agency — 2018</li>
+      <li>PLC Training — Engineers Syndicate — 2018</li>
+      <li>Photoshop Course — NAMAA — 2016–2017</li>
+      <li>18th Al-Bassel Fair for Invention and Innovation — 2017</li>
+      <li>ACM Aleppo Collegiate Programming Contest — 2016 & 2017</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  // Fade-in effect for sections on scroll
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
