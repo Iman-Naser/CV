@@ -5,67 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iman Naser - CV</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-  /* Basic */
-  body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; color:#333; line-height:1.6; }
-  .container { max-width: 900px; margin: 40px auto; padding:0 20px; }
+  /* ===== Basic ===== */
+  body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fdf6ec; color:#333; line-height:1.6; }
+  a { color:#b07a5f; text-decoration:none; transition:0.3s; }
+  a:hover { text-decoration:underline; }
+  .container { max-width:900px; margin:40px auto; padding:0 20px; }
 
-  /* Animated Header Gradient */
-  @keyframes gradientBG {
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-  }
-  .header {
-    text-align:center;
-    padding:50px 20px;
-    background: linear-gradient(-45deg,#6a11cb,#2575fc,#1dd1a1,#ff6b6b);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color:white;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    margin-bottom:30px;
-  }
-  .header h1 { font-size:42px; margin-bottom:10px; }
-  .header p { margin:5px 0; font-size:16px; }
+  /* ===== Navigation ===== */
+  nav { text-align:center; margin-bottom:30px; }
+  nav a { display:inline-block; margin:0 12px; padding:8px 16px; border-radius:8px; background:#f5e6d3; color:#b07a5f; font-weight:500; transition:0.3s; }
+  nav a:hover { background:#b07a5f; color:white; }
 
-  /* Buttons */
-  .buttons { margin-top:15px; }
-  .buttons a {
-    text-decoration:none; margin:5px;
-    display:inline-block; padding:10px 22px;
-    background:white; color:#2575fc; border-radius:50px;
-    font-weight:bold; transition:0.3s; font-size:14px;
-  }
-  .buttons a:hover { background:#1dd1a1; color:white; transform:scale(1.05); }
+  /* ===== Header ===== */
+  .header { text-align:center; padding:50px 20px; background:#f5e6d3; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); margin-bottom:30px; }
+  .header h1 { font-size:42px; margin-bottom:10px; color:#7a4f3f; }
+  .header p { margin:5px 0; font-size:16px; color:#5c3d2e; }
+  .buttons a { margin:5px; display:inline-block; padding:10px 22px; border-radius:50px; background:#fff; color:#b07a5f; font-weight:bold; font-size:14px; transition:0.3s; }
+  .buttons a:hover { background:#b07a5f; color:white; transform:scale(1.05); }
 
-  /* Sections */
+  /* ===== Sections ===== */
   .section {
-    background:white; padding:30px 25px; margin-bottom:20px; border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.05); opacity:0; transform:translateY(20px);
+    background:#fff8f0; padding:30px 25px; margin-bottom:20px; border-radius:15px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04); opacity:0; transform:translateY(20px);
     transition: all 0.8s ease;
   }
   .section.visible { opacity:1; transform:translateY(0); }
-  .section h2 { font-size:22px; color:#2575fc; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
-  ul li { margin-bottom:8px; padding-left:20px; position:relative; }
-  ul li::before { content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#2575fc; position:absolute; left:0; }
-  a { color:#2575fc; text-decoration:none; }
-  a:hover { text-decoration:underline; }
+  .section h2 { font-size:22px; color:#b07a5f; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
+  ul li { margin-bottom:8px; padding-left:25px; position:relative; }
+  ul li::before { content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#b07a5f; position:absolute; left:0; }
+  
+  /* ===== Skill Icons ===== */
+  .skill-icon { display:inline-block; margin:8px; font-size:24px; color:#7a4f3f; transition: transform 0.3s, color 0.3s; }
+  .skill-icon:hover { transform: scale(1.4) rotate(15deg); color:#b07a5f; }
 
-  /* Skill Icons Hover */
-  .skill-icon { display:inline-block; margin:8px; font-size:24px; transition: transform 0.3s, color 0.3s; color:#2b4c7e; }
-  .skill-icon:hover { transform: scale(1.4) rotate(15deg); color:#1dd1a1; }
-
+  /* ===== Responsive ===== */
   @media(max-width:700px){
     .header h1 { font-size:32px; }
     .section h2 { font-size:18px; }
+    nav a { margin:4px; padding:6px 12px; }
   }
 </style>
 </head>
 <body>
 
 <div class="container">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#academic">📚 Academic</a>
+    <a href="#courses">🎓 Courses</a>
+    <a href="#research">🔬 Research</a>
+    <a href="#experience">💼 Work</a>
+    <a href="#education">📖 Education</a>
+    <a href="#skills">🛠 Skills</a>
+    <a href="#languages">🌐 Languages</a>
+    <a href="#certificates">📜 Certificates</a>
+  </nav>
 
   <!-- Header -->
   <div class="header">
@@ -81,7 +78,7 @@
   </div>
 
   <!-- Sections -->
-  <div class="section">
+  <div id="academic" class="section">
     <h2><i class="fas fa-graduation-cap"></i> Academic Information</h2>
     <p><strong>University:</strong> Dokuz Eylul University</p>
     <p><strong>Program:</strong> M.Sc. in Computer Engineering (With Thesis)</p>
@@ -91,7 +88,7 @@
     <p><strong>Status:</strong> Active Student</p>
   </div>
 
-  <div class="section">
+  <div id="courses" class="section">
     <h2><i class="fas fa-award"></i> Highlighted Courses</h2>
     <ul>
       <li>Artificial Intelligence — Grade: AA</li>
@@ -104,19 +101,19 @@
     </ul>
   </div>
 
-  <div class="section">
+  <div id="research" class="section">
     <h2><i class="fas fa-flask"></i> Master Thesis & Research</h2>
     <p>Completed multiple semesters of M.Sc. Research and Thesis work with consistent performance (grades B / G).</p>
   </div>
 
-  <div class="section">
+  <div id="experience" class="section">
     <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
     <ul>
       <li>Information & Communication Teacher — Salah-Aldeen School, Aleppo (2018–2019)</li>
     </ul>
   </div>
 
-  <div class="section">
+  <div id="education" class="section">
     <h2><i class="fas fa-book"></i> Additional Education</h2>
     <ul>
       <li>Master in Web Science — Syrian Virtual University (Studied 1 Semester) – 2019</li>
@@ -126,7 +123,7 @@
     </ul>
   </div>
 
-  <div class="section">
+  <div id="skills" class="section">
     <h2><i class="fas fa-tools"></i> Skills</h2>
     <div>
       <i class="fab fa-html5 skill-icon"></i>
@@ -150,7 +147,7 @@
     </ul>
   </div>
 
-  <div class="section">
+  <div id="languages" class="section">
     <h2><i class="fas fa-language"></i> Languages</h2>
     <ul>
       <li>Arabic — Native</li>
@@ -159,7 +156,7 @@
     </ul>
   </div>
 
-  <div class="section">
+  <div id="certificates" class="section">
     <h2><i class="fas fa-certificate"></i> Training & Certificates</h2>
     <ul>
       <li>Internet of Things courses (openSAP, Edrak, Coursera) — 2019</li>
@@ -185,8 +182,15 @@
       }
     });
   }, { threshold: 0.1 });
-
   sections.forEach(section => observer.observe(section));
+
+  // Smooth scrolling for navigation
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
+    });
+  });
 </script>
 
 </body>
