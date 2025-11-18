@@ -8,37 +8,130 @@
 
 <style>
   /* ===== Basic ===== */
-  body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fdf6ec; color:#333; line-height:1.6; }
-  a { color:#b07a5f; text-decoration:none; transition:0.3s; }
+  body {
+    margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#fdf6ec;
+    color:#333;
+    line-height:1.6;
+  }
+
+  a {
+    color:#b07a5f;
+    text-decoration:none;
+    transition:0.3s;
+  }
   a:hover { text-decoration:underline; }
-  .container { max-width:900px; margin:40px auto; padding:0 20px; }
+
+  .container {
+    max-width:900px;
+    margin:40px auto;
+    padding:20px; /* ضمان مساحة أعلى وأسفل */
+  }
 
   /* ===== Navigation ===== */
-  nav { text-align:center; margin-bottom:30px; }
-  nav a { display:inline-block; margin:0 12px; padding:8px 16px; border-radius:8px; background:#f5e6d3; color:#b07a5f; font-weight:500; transition:0.3s; }
-  nav a:hover { background:#b07a5f; color:white; }
+  nav {
+    text-align:center;
+    margin-bottom:30px;
+  }
+  nav a {
+    display:inline-block;
+    margin:0 12px;
+    padding:8px 16px;
+    border-radius:8px;
+    background:#f5e6d3;
+    color:#b07a5f;
+    font-weight:500;
+    transition:0.3s;
+  }
+  nav a:hover {
+    background:#b07a5f;
+    color:white;
+  }
 
   /* ===== Header ===== */
-  .header { text-align:center; padding:50px 20px; background:#f5e6d3; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); margin-bottom:30px; }
-  .header h1 { font-size:42px; margin-bottom:10px; color:#7a4f3f; }
-  .header p { margin:5px 0; font-size:16px; color:#5c3d2e; }
-  .buttons a { margin:5px; display:inline-block; padding:10px 22px; border-radius:50px; background:#fff; color:#b07a5f; font-weight:bold; font-size:14px; transition:0.3s; }
-  .buttons a:hover { background:#b07a5f; color:white; transform:scale(1.05); }
+  .header {
+    text-align:center;
+    padding:50px 20px;
+    background:#f5e6d3;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    margin-bottom:30px;
+  }
+  .header h1 {
+    font-size:42px;
+    margin-bottom:10px;
+    color:#7a4f3f;
+  }
+  .header p {
+    margin:5px 0;
+    font-size:16px;
+    color:#5c3d2e;
+  }
+  .buttons a {
+    margin:5px;
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:50px;
+    background:#fff;
+    color:#b07a5f;
+    font-weight:bold;
+    font-size:14px;
+    transition:0.3s;
+  }
+  .buttons a:hover {
+    background:#b07a5f;
+    color:white;
+    transform:scale(1.05);
+  }
 
   /* ===== Sections ===== */
   .section {
-    background:#fff8f0; padding:30px 25px; margin-bottom:20px; border-radius:15px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.04); opacity:0; transform:translateY(20px);
+    background:#fff8f0;
+    padding:30px 25px;
+    margin-bottom:30px; /* مسافة كافية بين الأقسام */
+    border-radius:15px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04);
+    opacity:0;
+    transform:translateY(20px);
     transition: all 0.8s ease;
   }
   .section.visible { opacity:1; transform:translateY(0); }
-  .section h2 { font-size:22px; color:#b07a5f; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
-  ul li { margin-bottom:8px; padding-left:25px; position:relative; }
-  ul li::before { content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#b07a5f; position:absolute; left:0; }
-  
+  .section h2 {
+    font-size:22px;
+    color:#b07a5f;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  ul li {
+    margin-bottom:8px;
+    padding-left:25px;
+    position:relative;
+  }
+  ul li::before {
+    content:"\f00c";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+    color:#b07a5f;
+    position:absolute;
+    left:0;
+  }
+
   /* ===== Skill Icons ===== */
-  .skill-icon { display:inline-block; margin:8px; font-size:24px; color:#7a4f3f; transition: transform 0.3s, color 0.3s; }
-  .skill-icon:hover { transform: scale(1.4) rotate(15deg); color:#b07a5f; }
+  .skill-icon {
+    display:inline-block;
+    margin:8px;
+    font-size:24px;
+    color:#7a4f3f;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .skill-icon:hover {
+    transform: scale(1.4) rotate(15deg);
+    color:#b07a5f;
+  }
 
   /* ===== Responsive ===== */
   @media(max-width:700px){
@@ -84,7 +177,7 @@
     <p><strong>Program:</strong> M.Sc. in Computer Engineering (With Thesis)</p>
     <p><strong>Language:</strong> English</p>
     <p><strong>GPA:</strong> 4.00 / 4.00</p>
-    </div>
+   </div>
 
   <div id="courses" class="section">
     <h2><i class="fas fa-award"></i> Highlighted Courses</h2>
@@ -98,6 +191,7 @@
       <li>Scientific Research Techniques & Publication Ethics — Grade: AA</li>
     </ul>
   </div>
+  
 
   <div id="research" class="section">
     <h2><i class="fas fa-flask"></i> Master Thesis & Research</h2>
@@ -108,6 +202,7 @@
     <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
     <ul>
       <li>Information & Communication Teacher — Salah-Aldeen School, Aleppo (2018–2019)</li>
+      <li>GPA: 4.0</li>
     </ul>
   </div>
 
@@ -150,7 +245,8 @@
     <ul>
       <li>Arabic — Native</li>
       <li>English — Intermediate (TOEFL prep + 2017 Exam Score: 82%)</li>
-      <li>Turkish — A1, A2, B1 at DEDAM, Dokuz Eylul University</li>
+      <li>Turkish —  C1 Certificate, Dokuz Eylul University Language Research and Teaching Centre (DEDAM)
+</li>
     </ul>
   </div>
 
